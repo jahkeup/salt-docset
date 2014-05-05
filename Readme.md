@@ -41,7 +41,7 @@ and update it for everyone.
 ## Notes:
 
 Item `3` on the list pulls whatever the last version of salt that I
-pulled into the repo and commited in (`2014.4 - 4ab9e67`). You can
+pulled into the repo and commited in (`2014.1.4 - 4ab9e67`). You can
 [take a look at the releases](https://github.com/saltstack/salt/releases)
 and update that submodule to build docsets for whatever version your
 heart desires. If you do update it to the current version and I have
