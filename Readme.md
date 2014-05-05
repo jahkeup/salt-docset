@@ -14,7 +14,7 @@ location when you add it to Dash.
 
 Here's some easy steps to create your own docset, though you can
 download one from the releases. If it gets out of sync with
-[Salt's](https://github.com/salt/saltstack) current release and you
+[Salt's](https://github.com/saltstack/salt) current release and you
 want to update that, please do and submit a PR. I'll happily accept
 and update it for everyone.
 
