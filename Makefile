@@ -7,13 +7,14 @@ SALT_DOCS_ICON=salt/doc/_static/favicon.ico
 DOCSET=$(shell pwd)/Salt.docset
 DASH_DOCSETS_PATH=$(HOME)/Library/Application Support/Dash/DocSets
 INSTALL_DOCSET=$(DASH_DOCSETS_PATH)/Salt/Salt.docset
+RELEASE_DOCSET=Salt.docset-$(DOCSET_RELEASE)
 
 QUIET=${2>&1 >/dev/null}
 
 ICON=$(shell pwd)/icon/salt-icon
 DOC2DASH=git+https://github.com/jahkeup/doc2dash.git@master
 
-clean:
+clean: cleanrelease
 	rm -rf ${SALT_DOCS_BUILD}/../* ${QUIET}
 	rm -rf ${DOCSET} ${QUIET}
 	rm -rf ${ICON}{.png,@2x.png} ${QUIET}
@@ -45,3 +46,13 @@ deps:
 	(which sphinx-build && which doc2dash) || pip install ${DOC2DASH} sphinx
 	which convert || brew install imagemagick
 
+release:
+ifndef DOCSET_RELEASE
+	$(error You must define a DOCSET_RELEASE when using 'make release')
+endif
+	$(shell date > release.log)
+	tar -cvzf $(RELEASE_DOCSET).tar.gz Salt.docset 2>> release.log
+	zip -v -r $(RELEASE_DOCSET).zip Salt.docset 1>> release.log
+
+cleanrelease:
+	rm $(RELEASE_DOCSET)*
