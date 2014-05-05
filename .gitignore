@@ -1,2 +1,6 @@
 icon/*
 Salt.docset
+*.log
+*.tgz
+*.tar.gz
+*.zip
