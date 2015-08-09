@@ -1,4 +1,14 @@
-# Salt Dash docset
+# Get the official Salt Dash docset
+
+[Use Dash's docsets](https://kapeli.com/dash#docsets), they are kept
+up to date by Kapeli.
+
+I used this repo to produce docsets for myself back when Salt was not
+distributed in docsets. I suppose that you could still find use in
+generating the development docsets if you so desired but I believe
+there are better methods for doing so now.
+
+# Unofficial Salt Dash docset
 
 This repo can be to produce a Salt.docset that can be used for Dash or
 Zeal.
